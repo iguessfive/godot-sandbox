@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl35y3uuy3rrv"]
+
+[ext_resource type="SpriteFrames" uid="uid://duiqhy5gjkik3" path="res://other/characters/slime/sprite_frames.tres" id="1_b3pov"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3pov"]
+radius = 7.0
+
+[node name="Slime" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 0.0235294, 0.239216, 1)
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = ExtResource("1_b3pov")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_b3pov")

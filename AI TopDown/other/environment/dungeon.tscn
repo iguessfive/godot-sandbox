@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=4 uid="uid://dl3umstisyu4b"]
+[gd_scene load_steps=3 format=4 uid="uid://dl3umstisyu4b"]
 
 [ext_resource type="TileSet" uid="uid://8gp6wr7ns8fg" path="res://other/environment/tile_set.tres" id="1_0wxvi"]
+[ext_resource type="Script" uid="uid://cgjebdvygwvet" path="res://other/environment/dungeon.gd" id="1_8ytne"]
 
 [node name="Dungeon" type="Node"]
+script = ExtResource("1_8ytne")
 
 [node name="Ground" type="TileMapLayer" parent="."]
 unique_name_in_owner = true

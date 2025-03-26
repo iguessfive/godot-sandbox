@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://3fi58phf8i47"]
+
+[ext_resource type="PackedScene" uid="uid://bl35y3uuy3rrv" path="res://other/characters/slime/slime.tscn" id="1_25v0d"]
+[ext_resource type="Script" uid="uid://6pcetsrgo6r0" path="res://other/camera/panning_view.gd" id="2_yxrpl"]
+
+[node name="ClickAndMove" type="Node2D"]
+
+[node name="Slime" parent="." instance=ExtResource("1_25v0d")]
+position = Vector2(105, 69)
+
+[node name="Slime2" parent="." instance=ExtResource("1_25v0d")]
+position = Vector2(105, 69)
+
+[node name="Slime3" parent="." instance=ExtResource("1_25v0d")]
+position = Vector2(101, -181)
+
+[node name="Slime4" parent="." instance=ExtResource("1_25v0d")]
+position = Vector2(-948, -20)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = -1000
+limit_top = -500
+limit_right = 1000
+limit_bottom = 500
+script = ExtResource("2_yxrpl")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]

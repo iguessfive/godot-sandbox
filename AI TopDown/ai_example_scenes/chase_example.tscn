@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3cm5t4656nrl"]
+[gd_scene load_steps=7 format=3 uid="uid://d3cm5t4656nrl"]
 
 [ext_resource type="Script" uid="uid://ccpkghj8bievd" path="res://other/background/canvas_layer.gd" id="1_f0wwx"]
-[ext_resource type="PackedScene" uid="uid://bl35y3uuy3rrv" path="res://other/characters/slime/slime.tscn" id="1_vh6kw"]
 [ext_resource type="PackedScene" uid="uid://comkf76mpnngj" path="res://other/player/player.tscn" id="2_1b60h"]
 [ext_resource type="PackedScene" uid="uid://dl3umstisyu4b" path="res://other/environment/dungeon.tscn" id="2_ydlbr"]
+[ext_resource type="SpriteFrames" uid="uid://duiqhy5gjkik3" path="res://other/characters/slime/sprite_frames.tres" id="4_jj8cv"]
 [ext_resource type="Script" uid="uid://xiib4execras" path="res://ai_scripts/chase.gd" id="4_uwh7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3pov"]
+radius = 7.0
 
 [node name="Chase" type="Node"]
 
@@ -23,12 +26,32 @@ color = Color(0.207843, 0.227451, 0.258824, 1)
 
 [node name="Dungeon" parent="." instance=ExtResource("2_ydlbr")]
 
-[node name="Slime" parent="." instance=ExtResource("1_vh6kw")]
-visible = false
-position = Vector2(152, -19)
-scale = Vector2(2, 2)
-script = ExtResource("4_uwh7p")
-
 [node name="Player" parent="." instance=ExtResource("2_1b60h")]
 position = Vector2(-168, -2)
 scale = Vector2(2, 2)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+
+[node name="Slime" type="CharacterBody2D" parent="." node_paths=PackedStringArray("navigation_agent")]
+position = Vector2(183, -52)
+scale = Vector2(2, 2)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("4_uwh7p")
+navigation_agent = NodePath("NavigationAgent2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Slime"]
+self_modulate = Color(0.367652, 0.49318, 0.574657, 1)
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = ExtResource("4_jj8cv")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime"]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_b3pov")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Slime"]
+path_postprocessing = 1
+avoidance_enabled = true

@@ -1,6 +1,14 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://8gp6wr7ns8fg"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://8gp6wr7ns8fg"]
 
 [ext_resource type="Texture2D" uid="uid://d01i3ahcxjdpb" path="res://other/environment/dungeon_tile_sheet.png" id="1_ex7jk"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ex7jk"]
+vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mxibc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxibc"]
 texture = ExtResource("1_ex7jk")
@@ -44,6 +52,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 5.73536, 4.1422, 4.77946, 4.16255, -16, 16, -16, 16, 16, -16, 16)
 3:2/0 = 0
+3:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ex7jk")
 4:2/0 = 0
 5:2/0 = 0
 6:2/0 = 0
@@ -76,6 +85,7 @@ texture_region_size = Vector2i(32, 32)
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, 5.07628, 16, 5.07628, 16, -16, 16, 16)
 5:4/0 = 0
+5:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mxibc")
 6:4/0 = 0
 7:4/0 = 0
 0:5/0 = 0
@@ -104,4 +114,5 @@ texture_region_size = Vector2i(32, 32)
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_mxibc")

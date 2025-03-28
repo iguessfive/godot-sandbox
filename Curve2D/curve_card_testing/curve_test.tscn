@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw5uxx41c5hpd"]
+
+[ext_resource type="Script" path="res://curve_test.gd" id="1_vel14"]
+[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://card.tscn" id="2_uxsf1"]
+
+[node name="CurveTest" type="Node2D"]
+rotation = -0.00332339
+script = ExtResource("1_vel14")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(568.508, 449.892)
+
+[node name="Card" parent="Marker2D" instance=ExtResource("2_uxsf1")]
+unique_name_in_owner = true
+rotation = 0.00139975

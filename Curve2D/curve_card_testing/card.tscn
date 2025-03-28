@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://n813umf0xvvg"]
+
+[ext_resource type="Texture2D" uid="uid://dp3wxdb381doy" path="res://icon.svg" id="1_aq0uy"]
+[ext_resource type="Script" path="res://card.gd" id="2_jnvul"]
+[ext_resource type="Script" path="res://card_ui.gd" id="3_1ftkw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yvk4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0745098, 1, 1, 1)
+
+[node name="Card" type="Sprite2D"]
+texture = ExtResource("1_aq0uy")
+script = ExtResource("2_jnvul")
+
+[node name="UI" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -128.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_1ftkw")
+
+[node name="SelectedPanel" type="Panel" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -64.5
+offset_right = 66.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0yvk4")
+
+[node name="Label" type="Label" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 31.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1

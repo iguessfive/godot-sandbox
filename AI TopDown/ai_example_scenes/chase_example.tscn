@@ -54,4 +54,49 @@ shape = SubResource("CircleShape2D_b3pov")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Slime"]
 path_postprocessing = 1
-avoidance_enabled = true
+
+[node name="Slime2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("navigation_agent")]
+position = Vector2(82, -90)
+scale = Vector2(2, 2)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("4_uwh7p")
+navigation_agent = NodePath("NavigationAgent2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Slime2"]
+self_modulate = Color(0.367652, 0.49318, 0.574657, 1)
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = ExtResource("4_jj8cv")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime2"]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_b3pov")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Slime2"]
+path_postprocessing = 1
+
+[node name="Slime3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("navigation_agent")]
+position = Vector2(142, 12)
+scale = Vector2(2, 2)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("4_uwh7p")
+navigation_agent = NodePath("NavigationAgent2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Slime3"]
+self_modulate = Color(0.367652, 0.49318, 0.574657, 1)
+texture_filter = 1
+position = Vector2(0, -8)
+sprite_frames = ExtResource("4_jj8cv")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slime3"]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_b3pov")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Slime3"]
+path_postprocessing = 1

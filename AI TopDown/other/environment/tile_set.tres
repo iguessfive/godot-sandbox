@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://8gp6wr7ns8fg"]
 
-[ext_resource type="Texture2D" uid="uid://d01i3ahcxjdpb" path="res://other/environment/dungeon_tile_sheet.png" id="1_ex7jk"]
+[ext_resource type="Texture2D" uid="uid://d01i3ahcxjdpb" path="res://other/environment/visuals/dungeon_tile_sheet.png" id="1_ex7jk"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ex7jk"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)

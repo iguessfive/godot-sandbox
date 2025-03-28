@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://do23kewuy1rdb"]
+
+[ext_resource type="Texture2D" uid="uid://dp3wxdb381doy" path="res://icon.svg" id="1_0haku"]
+[ext_resource type="Script" path="res://player_hand.gd" id="1_02p3j"]
+[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://card.tscn" id="2_adxyn"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="3_x3sjx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkdc4"]
+shader = ExtResource("3_x3sjx")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 3.0
+shader_parameter/viewport_scale = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_af3ri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3q6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2apoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_auodt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_im5sf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qq6i5"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_df6sr"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_130am"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlayerHand" type="Marker2D" parent="."]
+position = Vector2(565, 564)
+rotation = 0.0238788
+script = ExtResource("1_02p3j")
+
+[node name="Card" parent="PlayerHand" instance=ExtResource("2_adxyn")]
+material = SubResource("ShaderMaterial_mkdc4")
+position = Vector2(-129.065, -84.9427)
+rotation = -0.704611
+
+[node name="Button" type="Button" parent="PlayerHand"]
+offset_left = -160.0
+offset_top = -153.0
+offset_right = -24.0
+offset_bottom = -17.0
+rotation = -0.446248
+theme_override_styles/focus = SubResource("StyleBoxEmpty_af3ri")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3q6v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2apoh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_auodt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_im5sf")
+icon = ExtResource("1_0haku")
+
+[node name="Icon3" type="Sprite2D" parent="PlayerHand"]
+position = Vector2(-2.22368, -134.985)
+texture = ExtResource("1_0haku")
+
+[node name="Icon4" type="Sprite2D" parent="PlayerHand"]
+position = Vector2(88.2043, -118.14)
+rotation = 0.375657
+texture = ExtResource("1_0haku")
+
+[node name="Icon5" type="Sprite2D" parent="PlayerHand"]
+position = Vector2(166.114, -80.9893)
+rotation = 0.629857
+texture = ExtResource("1_0haku")
+
+[node name="PlaceSlot" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(588, 184)
+scale = Vector2(1.47656, 1.44531)
+texture = ExtResource("1_0haku")
+
+[node name="Label" type="Label" parent="PlaceSlot"]
+offset_left = -50.1164
+offset_top = -18.6811
+offset_right = 47.8836
+offset_bottom = 26.3189
+text = "Action"
+label_settings = SubResource("LabelSettings_qq6i5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawPile" type="Sprite2D" parent="."]
+self_modulate = Color(0, 8, 4, 0.671)
+position = Vector2(997, 322)
+texture = ExtResource("1_0haku")
+
+[node name="Label" type="Label" parent="DrawPile"]
+offset_left = -41.0
+offset_top = -24.0
+offset_right = 41.0
+offset_bottom = 21.0
+text = "Draw"
+label_settings = SubResource("LabelSettings_df6sr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StoryPanel" type="Panel" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = -522.0
+offset_top = -287.0
+offset_right = -198.0
+offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_130am")
+
+[node name="NPCTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/StoryPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 24.0
+offset_top = 45.0
+offset_right = 279.0
+offset_bottom = 83.0
+text = "What will you do next, I wonder?"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -516.0
+offset_top = 138.0
+offset_right = -327.0
+offset_bottom = 274.0
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="DrawButton" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Draw"
+
+[node name="DiscardButton" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discard"
+
+[node name="ReloadButton" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Reload"

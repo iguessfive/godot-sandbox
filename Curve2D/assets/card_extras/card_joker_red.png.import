@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d01i3ahcxjdpb"
-path="res://.godot/imported/dungeon_tile_sheet.png-d94aa595680fa33d7c19d7e2f0d5718d.ctex"
+uid="uid://brmn0twyxsn7v"
+path="res://.godot/imported/card_joker_red.png-7c9404901b7c5efd2770fc8c62127c3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://other/environment/dungeon_tile_sheet.png"
-dest_files=["res://.godot/imported/dungeon_tile_sheet.png-d94aa595680fa33d7c19d7e2f0d5718d.ctex"]
+source_file="res://assets/card_extras/card_joker_red.png"
+dest_files=["res://.godot/imported/card_joker_red.png-7c9404901b7c5efd2770fc8c62127c3e.ctex"]
 
 [params]
 

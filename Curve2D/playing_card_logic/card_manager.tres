@@ -1,0 +1,426 @@
+[gd_resource type="Resource" script_class="CardManager" load_steps=108 format=3 uid="uid://dk7o47d28n056"]
+
+[ext_resource type="Texture2D" uid="uid://cmlmo1k5wilod" path="res://assets/card_extras/card_back.png" id="1_ocs4l"]
+[ext_resource type="Script" path="res://playing_card_logic/card_manager.gd" id="2_vqlv8"]
+[ext_resource type="Script" path="res://playing_card_logic/card_data.gd" id="3_6nnts"]
+[ext_resource type="Texture2D" uid="uid://dpcp8lu0002gt" path="res://assets/card_images/card_club_1.png" id="4_ycy86"]
+[ext_resource type="Texture2D" uid="uid://bkh3lxpi8ljga" path="res://assets/card_images/card_club_2.png" id="5_m2h6w"]
+[ext_resource type="Texture2D" uid="uid://tduxieddh62s" path="res://assets/card_images/card_club_3.png" id="6_bxwyd"]
+[ext_resource type="Texture2D" uid="uid://dkbwqjv6g46yn" path="res://assets/card_images/card_club_4.png" id="7_cu0wg"]
+[ext_resource type="Texture2D" uid="uid://c0d2tie7gsiky" path="res://assets/card_images/card_club_5.png" id="8_fbpbt"]
+[ext_resource type="Texture2D" uid="uid://cu0o3sk6yo70h" path="res://assets/card_images/card_club_6.png" id="9_5u4w4"]
+[ext_resource type="Texture2D" uid="uid://da8onyiy38yce" path="res://assets/card_images/card_club_7.png" id="10_1apk7"]
+[ext_resource type="Texture2D" uid="uid://dfluu7t4jg7yy" path="res://assets/card_images/card_club_8.png" id="11_h88ph"]
+[ext_resource type="Texture2D" uid="uid://bmolpxwexcjtf" path="res://assets/card_images/card_club_9.png" id="12_h4t8n"]
+[ext_resource type="Texture2D" uid="uid://bjluyb70g0nrm" path="res://assets/card_images/card_club_10.png" id="13_wj36n"]
+[ext_resource type="Texture2D" uid="uid://csjtv1a85nixl" path="res://assets/card_images/card_club_11.png" id="14_fs4t2"]
+[ext_resource type="Texture2D" uid="uid://c8ksxis6sfn7h" path="res://assets/card_images/card_club_12.png" id="15_80g3p"]
+[ext_resource type="Texture2D" uid="uid://bxua574c0gdm1" path="res://assets/card_images/card_club_13.png" id="16_6plpw"]
+[ext_resource type="Texture2D" uid="uid://mdqf2x4emsm6" path="res://assets/card_images/card_spade_1.png" id="17_oe8c4"]
+[ext_resource type="Texture2D" uid="uid://cliblhjhs8l36" path="res://assets/card_images/card_spade_2.png" id="18_buw5r"]
+[ext_resource type="Texture2D" uid="uid://uun3jpr133kl" path="res://assets/card_images/card_spade_3.png" id="19_hoex7"]
+[ext_resource type="Texture2D" uid="uid://t4yfwf2etwyc" path="res://assets/card_images/card_spade_4.png" id="20_a0d2t"]
+[ext_resource type="Texture2D" uid="uid://ce4ypqv7wwers" path="res://assets/card_images/card_spade_5.png" id="21_5h1me"]
+[ext_resource type="Texture2D" uid="uid://b3srb553gj0ce" path="res://assets/card_images/card_spade_6.png" id="22_tdwoy"]
+[ext_resource type="Texture2D" uid="uid://xcgq1l1g5y7r" path="res://assets/card_images/card_spade_7.png" id="23_hdmk2"]
+[ext_resource type="Texture2D" uid="uid://cng3a7agq1pr5" path="res://assets/card_images/card_spade_8.png" id="24_ajgsa"]
+[ext_resource type="Texture2D" uid="uid://dfdd6da7psfvi" path="res://assets/card_images/card_spade_9.png" id="25_bnex2"]
+[ext_resource type="Texture2D" uid="uid://cy056dkb06icm" path="res://assets/card_images/card_spade_10.png" id="26_o2qrk"]
+[ext_resource type="Texture2D" uid="uid://cv0ceit8xhr0t" path="res://assets/card_images/card_spade_11.png" id="27_qsxx0"]
+[ext_resource type="Texture2D" uid="uid://dutyvk0f0wngb" path="res://assets/card_images/card_spade_12.png" id="28_xq0pl"]
+[ext_resource type="Texture2D" uid="uid://br5rf2o01gwjf" path="res://assets/card_images/card_spade_13.png" id="29_tuxbl"]
+[ext_resource type="Texture2D" uid="uid://dos0gdodk1ct2" path="res://assets/card_images/card_heart_1.png" id="30_byqs7"]
+[ext_resource type="Texture2D" uid="uid://dhs1i3f8q31pm" path="res://assets/card_images/card_heart_2.png" id="31_88f18"]
+[ext_resource type="Texture2D" uid="uid://nmnfqwy52oi0" path="res://assets/card_images/card_heart_3.png" id="32_y757g"]
+[ext_resource type="Texture2D" uid="uid://cameea8rtq3sf" path="res://assets/card_images/card_heart_4.png" id="33_51e4d"]
+[ext_resource type="Texture2D" uid="uid://xhynev6p3vat" path="res://assets/card_images/card_heart_5.png" id="34_dqn68"]
+[ext_resource type="Texture2D" uid="uid://pkyjqslh3y4e" path="res://assets/card_images/card_heart_6.png" id="35_hbdso"]
+[ext_resource type="Texture2D" uid="uid://ot7sjc4qp7h8" path="res://assets/card_images/card_heart_7.png" id="36_8pmjt"]
+[ext_resource type="Texture2D" uid="uid://p07mtnagh1kg" path="res://assets/card_images/card_heart_8.png" id="37_qmhl5"]
+[ext_resource type="Texture2D" uid="uid://8jw28fg6h5me" path="res://assets/card_images/card_heart_9.png" id="38_w2a5w"]
+[ext_resource type="Texture2D" uid="uid://bisl2una0a7s0" path="res://assets/card_images/card_heart_10.png" id="39_u177j"]
+[ext_resource type="Texture2D" uid="uid://uk67eyaqa13p" path="res://assets/card_images/card_heart_11.png" id="40_pdm7c"]
+[ext_resource type="Texture2D" uid="uid://crldfl6gf71q4" path="res://assets/card_images/card_heart_12.png" id="41_k6lbv"]
+[ext_resource type="Texture2D" uid="uid://djcy0bdjpndo6" path="res://assets/card_images/card_heart_13.png" id="42_3wcua"]
+[ext_resource type="Texture2D" uid="uid://b3dbdidpbjh2d" path="res://assets/card_images/card_diamond_1.png" id="43_7srft"]
+[ext_resource type="Texture2D" uid="uid://clhel2j5mw47e" path="res://assets/card_images/card_diamond_2.png" id="44_ot4wg"]
+[ext_resource type="Texture2D" uid="uid://dey5ivj4dq6te" path="res://assets/card_images/card_diamond_3.png" id="45_0qe5c"]
+[ext_resource type="Texture2D" uid="uid://drg6bir3kxlqx" path="res://assets/card_images/card_diamond_4.png" id="46_yhrph"]
+[ext_resource type="Texture2D" uid="uid://cr8hw2m7dmmru" path="res://assets/card_images/card_diamond_5.png" id="47_tv3ht"]
+[ext_resource type="Texture2D" uid="uid://0jea24kbnekq" path="res://assets/card_images/card_diamond_6.png" id="48_goa0b"]
+[ext_resource type="Texture2D" uid="uid://b1l22fqvuygqi" path="res://assets/card_images/card_diamond_7.png" id="49_j877j"]
+[ext_resource type="Texture2D" uid="uid://5s6nxbo4r05e" path="res://assets/card_images/card_diamond_8.png" id="50_54swe"]
+[ext_resource type="Texture2D" uid="uid://b1njaojwx6jwr" path="res://assets/card_images/card_diamond_9.png" id="51_b8tbe"]
+[ext_resource type="Texture2D" uid="uid://cdbg42qx2lo64" path="res://assets/card_images/card_diamond_10.png" id="52_sag51"]
+[ext_resource type="Texture2D" uid="uid://d1timb86dtoep" path="res://assets/card_images/card_diamond_11.png" id="53_3nn3r"]
+[ext_resource type="Texture2D" uid="uid://do5psdloivwta" path="res://assets/card_images/card_diamond_12.png" id="54_txkne"]
+[ext_resource type="Texture2D" uid="uid://ktyqyyskqlo7" path="res://assets/card_images/card_diamond_13.png" id="55_rj0pp"]
+
+[sub_resource type="Resource" id="Resource_7heff"]
+script = ExtResource("3_6nnts")
+rank = 1
+suit = "club"
+front_texture = ExtResource("4_ycy86")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_ha3y2"]
+script = ExtResource("3_6nnts")
+rank = 2
+suit = "club"
+front_texture = ExtResource("5_m2h6w")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_7m61l"]
+script = ExtResource("3_6nnts")
+rank = 3
+suit = "club"
+front_texture = ExtResource("6_bxwyd")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_lxcid"]
+script = ExtResource("3_6nnts")
+rank = 4
+suit = "club"
+front_texture = ExtResource("7_cu0wg")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_5rupi"]
+script = ExtResource("3_6nnts")
+rank = 5
+suit = "club"
+front_texture = ExtResource("8_fbpbt")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_pvar4"]
+script = ExtResource("3_6nnts")
+rank = 6
+suit = "club"
+front_texture = ExtResource("9_5u4w4")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_eyeyh"]
+script = ExtResource("3_6nnts")
+rank = 7
+suit = "club"
+front_texture = ExtResource("10_1apk7")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_6ay12"]
+script = ExtResource("3_6nnts")
+rank = 8
+suit = "club"
+front_texture = ExtResource("11_h88ph")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_oxi0p"]
+script = ExtResource("3_6nnts")
+rank = 9
+suit = "club"
+front_texture = ExtResource("12_h4t8n")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_onn23"]
+script = ExtResource("3_6nnts")
+rank = 10
+suit = "club"
+front_texture = ExtResource("13_wj36n")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_d68t7"]
+script = ExtResource("3_6nnts")
+rank = 11
+suit = "club"
+front_texture = ExtResource("14_fs4t2")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_xpdnk"]
+script = ExtResource("3_6nnts")
+rank = 12
+suit = "club"
+front_texture = ExtResource("15_80g3p")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_gg8oa"]
+script = ExtResource("3_6nnts")
+rank = 13
+suit = "club"
+front_texture = ExtResource("16_6plpw")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_nuq1h"]
+script = ExtResource("3_6nnts")
+rank = 1
+suit = "spade"
+front_texture = ExtResource("17_oe8c4")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_8r8at"]
+script = ExtResource("3_6nnts")
+rank = 2
+suit = "spade"
+front_texture = ExtResource("18_buw5r")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_hqtd8"]
+script = ExtResource("3_6nnts")
+rank = 3
+suit = "spade"
+front_texture = ExtResource("19_hoex7")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_fcyy6"]
+script = ExtResource("3_6nnts")
+rank = 4
+suit = "spade"
+front_texture = ExtResource("20_a0d2t")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_x2fn5"]
+script = ExtResource("3_6nnts")
+rank = 5
+suit = "spade"
+front_texture = ExtResource("21_5h1me")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_of0j2"]
+script = ExtResource("3_6nnts")
+rank = 6
+suit = "spade"
+front_texture = ExtResource("22_tdwoy")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_y8h4y"]
+script = ExtResource("3_6nnts")
+rank = 7
+suit = "spade"
+front_texture = ExtResource("23_hdmk2")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_4yjky"]
+script = ExtResource("3_6nnts")
+rank = 8
+suit = "spade"
+front_texture = ExtResource("24_ajgsa")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_nkpvk"]
+script = ExtResource("3_6nnts")
+rank = 9
+suit = "spade"
+front_texture = ExtResource("25_bnex2")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_1eh5d"]
+script = ExtResource("3_6nnts")
+rank = 10
+suit = "spade"
+front_texture = ExtResource("26_o2qrk")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_da4hx"]
+script = ExtResource("3_6nnts")
+rank = 11
+suit = "spade"
+front_texture = ExtResource("27_qsxx0")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_mdsi3"]
+script = ExtResource("3_6nnts")
+rank = 12
+suit = "spade"
+front_texture = ExtResource("28_xq0pl")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_p4frs"]
+script = ExtResource("3_6nnts")
+rank = 13
+suit = "spade"
+front_texture = ExtResource("29_tuxbl")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_5jm22"]
+script = ExtResource("3_6nnts")
+rank = 1
+suit = "heart"
+front_texture = ExtResource("30_byqs7")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_xebfu"]
+script = ExtResource("3_6nnts")
+rank = 2
+suit = "heart"
+front_texture = ExtResource("31_88f18")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_lusyk"]
+script = ExtResource("3_6nnts")
+rank = 3
+suit = "heart"
+front_texture = ExtResource("32_y757g")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_c3rdi"]
+script = ExtResource("3_6nnts")
+rank = 4
+suit = "heart"
+front_texture = ExtResource("33_51e4d")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_0nneh"]
+script = ExtResource("3_6nnts")
+rank = 5
+suit = "heart"
+front_texture = ExtResource("34_dqn68")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_uo6kd"]
+script = ExtResource("3_6nnts")
+rank = 6
+suit = "heart"
+front_texture = ExtResource("35_hbdso")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_hgm27"]
+script = ExtResource("3_6nnts")
+rank = 7
+suit = "heart"
+front_texture = ExtResource("36_8pmjt")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_bahpk"]
+script = ExtResource("3_6nnts")
+rank = 8
+suit = "heart"
+front_texture = ExtResource("37_qmhl5")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_llv81"]
+script = ExtResource("3_6nnts")
+rank = 9
+suit = "heart"
+front_texture = ExtResource("38_w2a5w")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_dsucc"]
+script = ExtResource("3_6nnts")
+rank = 10
+suit = "heart"
+front_texture = ExtResource("39_u177j")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_u1uki"]
+script = ExtResource("3_6nnts")
+rank = 11
+suit = "heart"
+front_texture = ExtResource("40_pdm7c")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_l3n5o"]
+script = ExtResource("3_6nnts")
+rank = 12
+suit = "heart"
+front_texture = ExtResource("41_k6lbv")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_uatny"]
+script = ExtResource("3_6nnts")
+rank = 13
+suit = "heart"
+front_texture = ExtResource("42_3wcua")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_6hf74"]
+script = ExtResource("3_6nnts")
+rank = 1
+suit = "diamond"
+front_texture = ExtResource("43_7srft")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_35ww5"]
+script = ExtResource("3_6nnts")
+rank = 2
+suit = "diamond"
+front_texture = ExtResource("44_ot4wg")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_ohdi3"]
+script = ExtResource("3_6nnts")
+rank = 3
+suit = "diamond"
+front_texture = ExtResource("45_0qe5c")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_4ajv7"]
+script = ExtResource("3_6nnts")
+rank = 4
+suit = "diamond"
+front_texture = ExtResource("46_yhrph")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_hcn5t"]
+script = ExtResource("3_6nnts")
+rank = 5
+suit = "diamond"
+front_texture = ExtResource("47_tv3ht")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_6tili"]
+script = ExtResource("3_6nnts")
+rank = 6
+suit = "diamond"
+front_texture = ExtResource("48_goa0b")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_n8ujr"]
+script = ExtResource("3_6nnts")
+rank = 7
+suit = "diamond"
+front_texture = ExtResource("49_j877j")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_05cl6"]
+script = ExtResource("3_6nnts")
+rank = 8
+suit = "diamond"
+front_texture = ExtResource("50_54swe")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_wuq5t"]
+script = ExtResource("3_6nnts")
+rank = 9
+suit = "diamond"
+front_texture = ExtResource("51_b8tbe")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_bjy4y"]
+script = ExtResource("3_6nnts")
+rank = 10
+suit = "diamond"
+front_texture = ExtResource("52_sag51")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_gy3d4"]
+script = ExtResource("3_6nnts")
+rank = 11
+suit = "diamond"
+front_texture = ExtResource("53_3nn3r")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_1dijb"]
+script = ExtResource("3_6nnts")
+rank = 12
+suit = "diamond"
+front_texture = ExtResource("54_txkne")
+back_texture = ExtResource("1_ocs4l")
+
+[sub_resource type="Resource" id="Resource_s8vj8"]
+script = ExtResource("3_6nnts")
+rank = 13
+suit = "diamond"
+front_texture = ExtResource("55_rj0pp")
+back_texture = ExtResource("1_ocs4l")
+
+[resource]
+script = ExtResource("2_vqlv8")
+standard_deck = Array[ExtResource("3_6nnts")]([SubResource("Resource_7heff"), SubResource("Resource_ha3y2"), SubResource("Resource_7m61l"), SubResource("Resource_lxcid"), SubResource("Resource_5rupi"), SubResource("Resource_pvar4"), SubResource("Resource_eyeyh"), SubResource("Resource_6ay12"), SubResource("Resource_oxi0p"), SubResource("Resource_onn23"), SubResource("Resource_d68t7"), SubResource("Resource_xpdnk"), SubResource("Resource_gg8oa"), SubResource("Resource_nuq1h"), SubResource("Resource_8r8at"), SubResource("Resource_hqtd8"), SubResource("Resource_fcyy6"), SubResource("Resource_x2fn5"), SubResource("Resource_of0j2"), SubResource("Resource_y8h4y"), SubResource("Resource_4yjky"), SubResource("Resource_nkpvk"), SubResource("Resource_1eh5d"), SubResource("Resource_da4hx"), SubResource("Resource_mdsi3"), SubResource("Resource_p4frs"), SubResource("Resource_5jm22"), SubResource("Resource_xebfu"), SubResource("Resource_lusyk"), SubResource("Resource_c3rdi"), SubResource("Resource_0nneh"), SubResource("Resource_uo6kd"), SubResource("Resource_hgm27"), SubResource("Resource_bahpk"), SubResource("Resource_llv81"), SubResource("Resource_dsucc"), SubResource("Resource_u1uki"), SubResource("Resource_l3n5o"), SubResource("Resource_uatny"), SubResource("Resource_6hf74"), SubResource("Resource_35ww5"), SubResource("Resource_ohdi3"), SubResource("Resource_4ajv7"), SubResource("Resource_hcn5t"), SubResource("Resource_6tili"), SubResource("Resource_n8ujr"), SubResource("Resource_05cl6"), SubResource("Resource_wuq5t"), SubResource("Resource_bjy4y"), SubResource("Resource_gy3d4"), SubResource("Resource_1dijb"), SubResource("Resource_s8vj8")])
+card_back_texture = ExtResource("1_ocs4l")

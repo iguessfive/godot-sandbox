@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcsgc30airfn"]
+
+[ext_resource type="Script" uid="uid://8ntc54en5h3d" path="res://other/characters/fox/fox.gd" id="1_nhhff"]
+[ext_resource type="Texture2D" uid="uid://o2eg22ow5nrs" path="res://other/characters/fox/fox.png" id="2_us2k8"]
+
+[sub_resource type="Curve2D" id="Curve2D_8phbn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa8wu"]
+radius = 14.0
+
+[node name="Fox" type="CharacterBody2D" groups=["fox"]]
+script = ExtResource("1_nhhff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_us2k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+unique_name_in_owner = true
+width = 3.0
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8phbn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="SelectingSpriteArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectingSpriteArea"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_oa8wu")

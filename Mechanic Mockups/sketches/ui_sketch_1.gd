@@ -19,7 +19,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		and event.button_index == MOUSE_BUTTON_LEFT
 	)
 	if is_mouse_left_button_pressed and is_sprite_placing:
-		
 		place_sprite()
 		
 @warning_ignore("unused_parameter")
@@ -27,13 +26,13 @@ func place_sprite() -> void:
 	var icon: Texture = preload("res://icon.svg")
 	var sprite_2d = Sprite2D.new()
 	sprite_2d.texture = icon
+	sprite_2d.scale *= 0.25
 	
 	var tile_coordinates = tile_map_layer.local_to_map(tile_map_layer.get_local_mouse_position())
 	if tile_map_layer.get_cell_tile_data(tile_coordinates) != null:
 		if tile_data.has(tile_coordinates):
 			return
 			
-		print("placing sprite")
 		get_tree().current_scene.add_child(sprite_2d)
 		sprite_2d.global_position = tile_map_layer.map_to_local(tile_coordinates)
 		tile_data[tile_coordinates] = sprite_2d

@@ -26,7 +26,7 @@ func _ready() -> void:
 			is_move_stacking = not is_move_stacking
 			(selected_character as Fox).is_move_stacking_enabled = is_move_stacking
 	)
-	
+
 func set_selected_character(new_character: CharacterBody2D) -> void:
 	selected_character = new_character
 	selected_character_label.text = selected_character.name

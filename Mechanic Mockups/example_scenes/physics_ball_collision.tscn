@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv7nwxuuq048j"]
+
+[ext_resource type="PackedScene" uid="uid://i8yp7vun2rm4" path="res://other/items/ball_2d.tscn" id="1_sm6tc"]
+[ext_resource type="Texture2D" uid="uid://o2eg22ow5nrs" path="res://other/characters/fox/fox.png" id="3_20d1i"]
+
+[sub_resource type="GDScript" id="GDScript_720ap"]
+script/source = "extends RigidBody2D
+
+@export var max_move_force = 1000.0
+
+@warning_ignore(\"unused_parameter\")
+func _physics_process(delta: float) -> void:
+	var direction: Vector2 = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	apply_force(direction * max_move_force)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_720ap"]
+radius = 40.0125
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_720ap"]
+size = Vector2(21.5, 1090)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpjiy"]
+size = Vector2(1917.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20d1i"]
+size = Vector2(1944.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nmfv"]
+size = Vector2(25.75, 1064)
+
+[node name="PhysicsBallCollision" type="Node2D"]
+
+[node name="Ball2D" parent="." instance=ExtResource("1_sm6tc")]
+position = Vector2(422, 296)
+
+[node name="Fox" type="RigidBody2D" parent="." groups=["fox"]]
+position = Vector2(714, 279)
+lock_rotation = true
+linear_damp = 7.0
+script = SubResource("GDScript_720ap")
+max_move_force = 7000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Fox"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("3_20d1i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fox"]
+position = Vector2(-2, 6)
+shape = SubResource("CircleShape2D_720ap")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-12, 546)
+shape = SubResource("RectangleShape2D_720ap")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(963.25, 1099)
+shape = SubResource("RectangleShape2D_xpjiy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(970.75, -14)
+shape = SubResource("RectangleShape2D_20d1i")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1937.12, 538)
+shape = SubResource("RectangleShape2D_8nmfv")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7ubnbm61mhb6"]
+
+[ext_resource type="Script" uid="uid://dd2tbekwixohb" path="res://other/characters/space_ships/ship_player_character_body.gd" id="1_3y0r8"]
+[ext_resource type="Texture2D" uid="uid://dkqwwpe8djeda" path="res://other/characters/space_ships/ship_green.png" id="2_b7ef0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_munjn"]
+radius = 59.4138
+
+[node name="ShipPlayer" type="CharacterBody2D"]
+script = ExtResource("1_3y0r8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b7ef0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_munjn")

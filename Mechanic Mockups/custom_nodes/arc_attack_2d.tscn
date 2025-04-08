@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv6vqpe0nbinu"]
+
+[ext_resource type="Script" uid="uid://dsabefh37qb5a" path="res://custom_nodes/arc_attack_2d.gd" id="1_dti1o"]
+[ext_resource type="PackedScene" uid="uid://c7ubnbm61mhb6" path="res://other/characters/space_ships/ship_player.tscn" id="2_dt2s5"]
+[ext_resource type="PackedScene" uid="uid://crehs2ohk4j3y" path="res://custom_nodes/arc_weapon_2d.tscn" id="3_c4jl6"]
+[ext_resource type="PackedScene" uid="uid://bh2gb1mg1gdfx" path="res://other/characters/space_ships/ship_enemy.tscn" id="4_hbuv5"]
+
+[node name="ArcAttack2D" type="Node2D"]
+script = ExtResource("1_dti1o")
+
+[node name="ShipPlayer" parent="." instance=ExtResource("2_dt2s5")]
+position = Vector2(251, 316)
+
+[node name="ArcWeapon2D" parent="ShipPlayer" node_paths=PackedStringArray("target") instance=ExtResource("3_c4jl6")]
+target = NodePath("../../ShipEnemy")
+
+[node name="ShipEnemy" parent="." instance=ExtResource("4_hbuv5")]
+position = Vector2(865, 312)

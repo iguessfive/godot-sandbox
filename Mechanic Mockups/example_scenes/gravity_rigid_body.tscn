@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://s5y2624qllwj"]
+
+[ext_resource type="Texture2D" uid="uid://diqb5dmvihygi" path="res://other/ui/visuals/pixel_dot.png" id="1_slfox"]
+[ext_resource type="Texture2D" uid="uid://dy7qwper2uks6" path="res://icon.svg" id="2_csi4b"]
+[ext_resource type="Script" uid="uid://dhwrscesi54h6" path="res://other/characters/godot_icon/player_rigid_v_1.gd" id="2_gmfn0"]
+[ext_resource type="Texture2D" uid="uid://b1jvbptadyn7r" path="res://other/items/pixel_ball.png" id="4_gmfn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmfn0"]
+size = Vector2(1861, 63)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gmfn0"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jv6qq"]
+normal = Vector2(1, 0)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csi4b"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slfox"]
+size = Vector2(124, 126)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gmfn0"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmfn0"]
+radius = 50.8035
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jv6qq"]
+bounce = 1.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(971, 975)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+self_modulate = Color(0, 0.356863, 0.466667, 1)
+position = Vector2(-13.5001, -2.50001)
+scale = Vector2(58.0937, 1.78125)
+texture = ExtResource("1_slfox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13.5, 1)
+shape = SubResource("RectangleShape2D_gmfn0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(948, -81)
+shape = SubResource("WorldBoundaryShape2D_gmfn0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-976, -45)
+shape = SubResource("WorldBoundaryShape2D_jv6qq")
+
+[node name="PlayerRigidV1" type="RigidBody2D" parent="."]
+position = Vector2(859, 857)
+physics_material_override = SubResource("PhysicsMaterial_csi4b")
+linear_damp = 5.0
+constant_force = Vector2(0, 5000)
+script = ExtResource("2_gmfn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerRigidV1"]
+texture = ExtResource("2_csi4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRigidV1"]
+shape = SubResource("RectangleShape2D_slfox")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(361, 69)
+mass = 3.0
+physics_material_override = SubResource("PhysicsMaterial_gmfn0")
+contact_monitor = true
+constant_force = Vector2(0, 980)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(4, 3.6875)
+texture = ExtResource("4_gmfn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_gmfn0")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(1056, 140)
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_jv6qq")
+constant_force = Vector2(0, 980)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+scale = Vector2(4, 3.6875)
+texture = ExtResource("4_gmfn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("CircleShape2D_gmfn0")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(1396, 95)
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_jv6qq")
+constant_force = Vector2(0, 980)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+scale = Vector2(4, 3.6875)
+texture = ExtResource("4_gmfn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("CircleShape2D_gmfn0")

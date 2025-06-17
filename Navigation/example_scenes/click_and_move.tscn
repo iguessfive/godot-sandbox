@@ -86,6 +86,3 @@ tile_set = SubResource("TileSet_8phbn")
 
 [node name="Fox" parent="." instance=ExtResource("5_iq0xv")]
 position = Vector2(-271, 60)
-
-[node name="Fox2" parent="." instance=ExtResource("5_iq0xv")]
-position = Vector2(-20, 65)

@@ -1,8 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://n813umf0xvvg"]
 
-[ext_resource type="Texture2D" uid="uid://dp3wxdb381doy" path="res://icon.svg" id="1_aq0uy"]
-[ext_resource type="Script" path="res://card.gd" id="2_jnvul"]
-[ext_resource type="Script" path="res://card_ui.gd" id="3_1ftkw"]
+[ext_resource type="Texture2D" uid="uid://natfbgvtff0v" path="res://icon.svg" id="1_aq0uy"]
+
+[sub_resource type="Resource" id="Resource_k1pat"]
+metadata/__load_path__ = "res://card.gd"
+
+[sub_resource type="Resource" id="Resource_hj50y"]
+metadata/__load_path__ = "res://card_ui.gd"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yvk4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -14,7 +18,7 @@ border_color = Color(0.0745098, 1, 1, 1)
 
 [node name="Card" type="Sprite2D"]
 texture = ExtResource("1_aq0uy")
-script = ExtResource("2_jnvul")
+script = SubResource("Resource_k1pat")
 
 [node name="UI" type="Control" parent="."]
 unique_name_in_owner = true
@@ -30,7 +34,7 @@ offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_1ftkw")
+script = SubResource("Resource_hj50y")
 
 [node name="SelectedPanel" type="Panel" parent="UI"]
 unique_name_in_owner = true

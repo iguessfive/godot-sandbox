@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw5uxx41c5hpd"]
 
-[ext_resource type="Script" path="res://curve_test.gd" id="1_vel14"]
-[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://card.tscn" id="2_uxsf1"]
+[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://curve_card_testing/card.tscn" id="2_uxsf1"]
+
+[sub_resource type="Resource" id="Resource_hcfv0"]
+metadata/__load_path__ = "res://curve_test.gd"
 
 [node name="CurveTest" type="Node2D"]
 rotation = -0.00332339
-script = ExtResource("1_vel14")
+script = SubResource("Resource_hcfv0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(568.508, 449.892)

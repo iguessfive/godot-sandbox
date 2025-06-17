@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CardManager" load_steps=108 format=3 uid="uid://dk7o47d28n056"]
 
 [ext_resource type="Texture2D" uid="uid://cmlmo1k5wilod" path="res://assets/card_extras/card_back.png" id="1_ocs4l"]
-[ext_resource type="Script" path="res://playing_card_logic/card_manager.gd" id="2_vqlv8"]
-[ext_resource type="Script" path="res://playing_card_logic/card_data.gd" id="3_6nnts"]
+[ext_resource type="Script" uid="uid://cu1evvp1ii0ie" path="res://playing_card_logic/card_manager.gd" id="2_vqlv8"]
+[ext_resource type="Script" uid="uid://d14o1d2uhn5g1" path="res://playing_card_logic/card_data.gd" id="3_6nnts"]
 [ext_resource type="Texture2D" uid="uid://dpcp8lu0002gt" path="res://assets/card_images/card_club_1.png" id="4_ycy86"]
 [ext_resource type="Texture2D" uid="uid://bkh3lxpi8ljga" path="res://assets/card_images/card_club_2.png" id="5_m2h6w"]
 [ext_resource type="Texture2D" uid="uid://tduxieddh62s" path="res://assets/card_images/card_club_3.png" id="6_bxwyd"]

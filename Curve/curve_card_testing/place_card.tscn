@@ -1,15 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://do23kewuy1rdb"]
+[gd_scene load_steps=13 format=3 uid="uid://do23kewuy1rdb"]
 
-[ext_resource type="Texture2D" uid="uid://dp3wxdb381doy" path="res://icon.svg" id="1_0haku"]
-[ext_resource type="Script" path="res://player_hand.gd" id="1_02p3j"]
-[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://card.tscn" id="2_adxyn"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="3_x3sjx"]
+[ext_resource type="Texture2D" uid="uid://natfbgvtff0v" path="res://icon.svg" id="1_0haku"]
+[ext_resource type="PackedScene" uid="uid://n813umf0xvvg" path="res://curve_card_testing/card.tscn" id="2_adxyn"]
+
+[sub_resource type="Resource" id="Resource_1jup0"]
+metadata/__load_path__ = "res://player_hand.gd"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mkdc4"]
-shader = ExtResource("3_x3sjx")
-shader_parameter/line_color = Color(0, 0, 0, 1)
-shader_parameter/line_thickness = 3.0
-shader_parameter/viewport_scale = Vector2(1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_af3ri"]
 
@@ -40,7 +37,7 @@ border_color = Color(1, 1, 1, 1)
 [node name="PlayerHand" type="Marker2D" parent="."]
 position = Vector2(565, 564)
 rotation = 0.0238788
-script = ExtResource("1_02p3j")
+script = SubResource("Resource_1jup0")
 
 [node name="Card" parent="PlayerHand" instance=ExtResource("2_adxyn")]
 material = SubResource("ShaderMaterial_mkdc4")
